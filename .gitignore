@@ -16,6 +16,7 @@ __v0_jsx-dev-runtime.ts
 # Dependencies and build output
 node_modules/
 .next/
+.open-next/
 .pnpm-store/
 *.tsbuildinfo
 

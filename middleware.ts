@@ -7,7 +7,7 @@ const ADMIN_SESSION_MAX_AGE = 60 * 60 * 24 * 365
 
 type SiteSettings = { allowedIp: string }
 
-export default async function proxy(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const token = process.env.ADMIN_SESSION_TOKEN || "terrace-admin-session"
   const cookie = request.cookies.get(ADMIN_COOKIE)?.value
