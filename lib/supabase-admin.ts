@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js"
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SECRET_KEY || ""
+const supabaseUrl = process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_URL || process.env.NEXT_PUBLIC_sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || ""
+const supabaseServiceKey = process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_SERVICE_ROLE_KEY || process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SECRET_KEY || ""
 
 export const isSupabaseAdminConfigured = !!(supabaseUrl && supabaseServiceKey)
 
