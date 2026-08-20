@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200">
+  <defs>
+    <linearGradient id="fabric8" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffe45c"/>
+      <stop offset="0.5" stop-color="#f5d51b"/>
+      <stop offset="1" stop-color="#facc15"/>
+    </linearGradient>
+    <pattern id="geo8" width="82" height="82" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <path d="M8 8h28l18 18-18 18H8L26 26z" fill="#fff7a8" opacity=".18"/>
+      <path d="M48 8h22v22H48z" fill="#0f7a46" opacity=".06"/>
+      <path d="M14 58h44l-18 18H14z" fill="#0f7a46" opacity=".05"/>
+    </pattern>
+    <filter id="shadow8" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1200" fill="#ffffff"/>
+  <g filter="url(#shadow8)">
+    <path d="M248 180 L348 120 H552 L652 180 L790 270 L704 430 L642 394 V1020 Q642 1086 576 1086 H324 Q258 1086 258 1020 V394 L196 430 L110 270 Z" fill="url(#fabric8)"/>
+    <path d="M248 180 L348 120 H552 L652 180 L790 270 L704 430 L642 394 V1020 Q642 1086 576 1086 H324 Q258 1086 258 1020 V394 L196 430 L110 270 Z" fill="url(#geo8)"/>
+    <path d="M348 120 Q450 194 552 120 L532 218 Q450 274 368 218 Z" fill="#173f32"/>
+    <path d="M374 145 Q450 198 526 145 L514 184 Q450 230 386 184 Z" fill="#facc15"/>
+    <path d="M205 250 L258 394 L196 430 L110 270 Z" fill="#173f32" opacity=".95"/>
+    <path d="M695 250 L642 394 L704 430 L790 270 Z" fill="#173f32" opacity=".95"/>
+    <path d="M224 291 L248 354" stroke="#facc15" stroke-width="10" stroke-linecap="round"/>
+    <path d="M676 291 L652 354" stroke="#facc15" stroke-width="10" stroke-linecap="round"/>
+    <path d="M258 394 L258 1020 Q258 1086 324 1086 H576 Q642 1086 642 1020 V394" fill="none" stroke="#0f5132" stroke-opacity=".22" stroke-width="10"/>
+    <path d="M318 322 C368 350 430 360 496 342 C444 382 374 391 305 358 C319 355 330 346 318 322 Z" fill="#173f32"/>
+    <g transform="translate(545 306)">
+      <path d="M0 28 L48 0 L96 28 L84 92 H12 Z" fill="#ffffff" stroke="#173f32" stroke-width="8"/>
+      <path d="M48 13 L78 31 L72 73 H24 L18 31 Z" fill="#facc15"/>
+      <path d="M24 31 H72 M34 73 L48 13 L62 73" stroke="#173f32" stroke-width="5" opacity=".9"/>
+      <text x="48" y="57" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="22" fill="#173f32">CBF</text>
+      <g fill="#173f32">
+        <path d="M8 -14l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+        <path d="M30 -20l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+        <path d="M52 -24l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+        <path d="M74 -20l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+        <path d="M96 -14l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+      </g>
+    </g>
+    <g transform="translate(240 462)">
+      <rect x="0" y="0" width="88" height="116" rx="12" fill="#ffffff" stroke="#173f32" stroke-width="5"/>
+      <text x="44" y="35" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="16" fill="#173f32">FIFA</text>
+      <text x="44" y="58" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="15" fill="#173f32">WORLD</text>
+      <text x="44" y="81" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="15" fill="#173f32">CUP</text>
+      <text x="44" y="103" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="13" fill="#173f32">2026</text>
+    </g>
+    <text x="450" y="675" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="170" fill="#173f32" stroke="#fff7a8" stroke-width="7">10</text>
+    <text x="450" y="982" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#173f32" opacity=".72">AERO-FAST</text>
+    <rect x="548" y="946" width="82" height="38" rx="4" fill="#173f32"/>
+    <text x="589" y="971" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="12" fill="#facc15">AUTHENTIC</text>
+  </g>
+</svg>

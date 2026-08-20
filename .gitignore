@@ -1,0 +1,43 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+.tools/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+.env*.local
+
+# Dependencies and build output
+node_modules/
+.next/
+.pnpm-store/
+*.tsbuildinfo
+
+# Local browser and testing state
+.chrome-cdp*/
+.chrome-profile*/
+.screenshots/
+
+# Local Codex/agent configuration
+.agents/
+skills-lock.json
+
+# Generated output and temporary files
+*.log
+tmp/
+contact-sheet*.png
+scratch-*.js
+.DS_Store
+.gitignore [0-9]*
+
+# Local service exports (may contain account metadata)
+.clerk-*.json
+
+# Original working photo library; deployable copies live in public/
+Football Jersey Photos/

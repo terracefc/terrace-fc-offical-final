@@ -1,0 +1,529 @@
+[
+  {
+    "sourceIndex": 0,
+    "source": "ChatGPT Image Jul 5, 2026, 07_42_18 PM.png",
+    "type": "excluded-logo"
+  },
+  {
+    "product": 1,
+    "sourceIndex": 1,
+    "source": "ChatGPT Image Jul 5, 2026, 10_25_35 AM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-01-front.webp",
+    "back": "/kits/processed/standardized-source/source-01-back.webp"
+  },
+  {
+    "product": 2,
+    "sourceIndex": 2,
+    "source": "ChatGPT Image Jul 5, 2026, 10_29_10 AM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-02-front.webp",
+    "back": "/kits/processed/standardized-source/source-02-back.webp"
+  },
+  {
+    "product": 3,
+    "sourceIndex": 3,
+    "source": "ChatGPT Image Jul 5, 2026, 10_33_02 AM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-03-front.webp",
+    "back": "/kits/processed/standardized-source/source-03-back.webp"
+  },
+  {
+    "product": 4,
+    "sourceIndex": 4,
+    "source": "ChatGPT Image Jul 5, 2026, 10_35_41 AM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-04-front.webp",
+    "back": "/kits/processed/standardized-source/source-04-back.webp"
+  },
+  {
+    "product": 5,
+    "sourceIndex": 5,
+    "source": "ChatGPT Image Jul 5, 2026, 10_41_06 AM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-05-front.webp",
+    "back": "/kits/processed/standardized-source/source-05-back.webp"
+  },
+  {
+    "sourceIndex": 6,
+    "source": "ChatGPT Image May 27, 2026, 02_47_53 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-06-single.webp"
+  },
+  {
+    "sourceIndex": 7,
+    "source": "ChatGPT Image May 27, 2026, 04_00_52 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-07-single.webp"
+  },
+  {
+    "sourceIndex": 8,
+    "source": "ChatGPT Image May 27, 2026, 04_04_27 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-08-single.webp"
+  },
+  {
+    "sourceIndex": 9,
+    "source": "ChatGPT Image May 27, 2026, 04_42_49 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-09-single.webp"
+  },
+  {
+    "sourceIndex": 10,
+    "source": "ChatGPT Image May 27, 2026, 04_43_45 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-10-single.webp"
+  },
+  {
+    "sourceIndex": 11,
+    "source": "ChatGPT Image May 27, 2026, 04_48_21 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-11-single.webp"
+  },
+  {
+    "sourceIndex": 12,
+    "source": "ChatGPT Image May 27, 2026, 04_50_58 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-12-single.webp"
+  },
+  {
+    "sourceIndex": 13,
+    "source": "ChatGPT Image May 27, 2026, 11_48_01 AM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-13-single.webp"
+  },
+  {
+    "sourceIndex": 14,
+    "source": "ChatGPT Image May 27, 2026, 11_53_58 AM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-14-single.webp"
+  },
+  {
+    "sourceIndex": 15,
+    "source": "ChatGPT Image May 28, 2026, 05_44_20 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-15-single.webp"
+  },
+  {
+    "sourceIndex": 16,
+    "source": "ChatGPT Image May 28, 2026, 05_45_46 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-16-single.webp"
+  },
+  {
+    "sourceIndex": 17,
+    "source": "ChatGPT Image May 28, 2026, 05_46_18 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-17-single.webp"
+  },
+  {
+    "sourceIndex": 18,
+    "source": "ChatGPT Image May 28, 2026, 05_46_35 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-18-single.webp"
+  },
+  {
+    "sourceIndex": 19,
+    "source": "ChatGPT Image May 28, 2026, 08_28_11 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-19-single.webp"
+  },
+  {
+    "sourceIndex": 20,
+    "source": "ChatGPT Image May 28, 2026, 08_35_15 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-20-single.webp"
+  },
+  {
+    "sourceIndex": 21,
+    "source": "ChatGPT Image May 28, 2026, 08_37_47 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-21-single.webp"
+  },
+  {
+    "sourceIndex": 22,
+    "source": "ChatGPT Image May 28, 2026, 08_44_01 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-22-single.webp"
+  },
+  {
+    "sourceIndex": 23,
+    "source": "ChatGPT Image May 28, 2026, 08_47_03 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-23-single.webp"
+  },
+  {
+    "sourceIndex": 24,
+    "source": "ChatGPT Image May 28, 2026, 08_50_44 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-24-single.webp"
+  },
+  {
+    "sourceIndex": 25,
+    "source": "ChatGPT Image May 28, 2026, 08_51_52 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-25-single.webp"
+  },
+  {
+    "sourceIndex": 26,
+    "source": "ChatGPT Image May 28, 2026, 11_13_08 AM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-26-single.webp"
+  },
+  {
+    "sourceIndex": 27,
+    "source": "ChatGPT Image May 28, 2026, 11_16_24 AM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-27-single.webp"
+  },
+  {
+    "product": 6,
+    "sourceIndex": 28,
+    "source": "ChatGPT Image May 29, 2026, 02_56_02 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-28-front.webp",
+    "back": "/kits/processed/standardized-source/source-28-back.webp"
+  },
+  {
+    "product": 7,
+    "sourceIndex": 29,
+    "source": "ChatGPT Image May 29, 2026, 02_57_43 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-29-front.webp",
+    "back": "/kits/processed/standardized-source/source-29-back.webp"
+  },
+  {
+    "product": 8,
+    "sourceIndex": 30,
+    "source": "ChatGPT Image May 29, 2026, 03_09_04 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-30-front.webp",
+    "back": "/kits/processed/standardized-source/source-30-back.webp"
+  },
+  {
+    "product": 9,
+    "sourceIndex": 31,
+    "source": "ChatGPT Image May 29, 2026, 03_29_14 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-31-front.webp",
+    "back": "/kits/processed/standardized-source/source-31-back.webp"
+  },
+  {
+    "product": 10,
+    "sourceIndex": 32,
+    "source": "ChatGPT Image May 29, 2026, 03_38_05 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-32-front.webp",
+    "back": "/kits/processed/standardized-source/source-32-back.webp"
+  },
+  {
+    "product": 11,
+    "sourceIndex": 33,
+    "source": "ChatGPT Image May 29, 2026, 03_43_37 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-33-front.webp",
+    "back": "/kits/processed/standardized-source/source-33-back.webp"
+  },
+  {
+    "product": 12,
+    "sourceIndex": 34,
+    "source": "ChatGPT Image May 29, 2026, 03_46_39 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-34-front.webp",
+    "back": "/kits/processed/standardized-source/source-34-back.webp"
+  },
+  {
+    "product": 13,
+    "sourceIndex": 35,
+    "source": "ChatGPT Image May 29, 2026, 03_47_54 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-35-front.webp",
+    "back": "/kits/processed/standardized-source/source-35-back.webp"
+  },
+  {
+    "product": 14,
+    "sourceIndex": 36,
+    "source": "ChatGPT Image May 29, 2026, 03_50_02 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-36-front.webp",
+    "back": "/kits/processed/standardized-source/source-36-back.webp"
+  },
+  {
+    "product": 15,
+    "sourceIndex": 37,
+    "source": "ChatGPT Image May 29, 2026, 03_50_57 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-37-front.webp",
+    "back": "/kits/processed/standardized-source/source-37-back.webp"
+  },
+  {
+    "product": 16,
+    "sourceIndex": 38,
+    "source": "ChatGPT Image May 29, 2026, 03_54_35 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-38-front.webp",
+    "back": "/kits/processed/standardized-source/source-38-back.webp"
+  },
+  {
+    "product": 17,
+    "sourceIndex": 39,
+    "source": "ChatGPT Image May 29, 2026, 03_58_33 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-39-front.webp",
+    "back": "/kits/processed/standardized-source/source-39-back.webp"
+  },
+  {
+    "product": 18,
+    "sourceIndex": 40,
+    "source": "ChatGPT Image May 29, 2026, 04_09_30 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-40-front.webp",
+    "back": "/kits/processed/standardized-source/source-40-back.webp"
+  },
+  {
+    "product": 19,
+    "sourceIndex": 41,
+    "source": "ChatGPT Image May 29, 2026, 04_15_21 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-41-front.webp",
+    "back": "/kits/processed/standardized-source/source-41-back.webp"
+  },
+  {
+    "product": 20,
+    "sourceIndex": 42,
+    "source": "ChatGPT Image May 29, 2026, 04_16_32 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-42-front.webp",
+    "back": "/kits/processed/standardized-source/source-42-back.webp"
+  },
+  {
+    "product": 21,
+    "sourceIndex": 43,
+    "source": "ChatGPT Image May 30, 2026, 01_10_52 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-43-front.webp",
+    "back": "/kits/processed/standardized-source/source-43-back.webp"
+  },
+  {
+    "product": 22,
+    "sourceIndex": 44,
+    "source": "ChatGPT Image May 30, 2026, 01_11_56 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-44-front.webp",
+    "back": "/kits/processed/standardized-source/source-44-back.webp"
+  },
+  {
+    "product": 23,
+    "sourceIndex": 45,
+    "source": "ChatGPT Image May 30, 2026, 01_13_22 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-45-front.webp",
+    "back": "/kits/processed/standardized-source/source-45-back.webp"
+  },
+  {
+    "product": 24,
+    "sourceIndex": 46,
+    "source": "ChatGPT Image May 30, 2026, 01_14_34 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-46-front.webp",
+    "back": "/kits/processed/standardized-source/source-46-back.webp"
+  },
+  {
+    "product": 25,
+    "sourceIndex": 47,
+    "source": "ChatGPT Image May 30, 2026, 01_15_50 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-47-front.webp",
+    "back": "/kits/processed/standardized-source/source-47-back.webp"
+  },
+  {
+    "product": 26,
+    "sourceIndex": 48,
+    "source": "ChatGPT Image May 30, 2026, 01_17_15 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-48-front.webp",
+    "back": "/kits/processed/standardized-source/source-48-back.webp"
+  },
+  {
+    "product": 27,
+    "sourceIndex": 49,
+    "source": "ChatGPT Image May 30, 2026, 01_18_11 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-49-front.webp",
+    "back": "/kits/processed/standardized-source/source-49-back.webp"
+  },
+  {
+    "product": 28,
+    "sourceIndex": 50,
+    "source": "ChatGPT Image May 30, 2026, 01_19_29 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-50-front.webp",
+    "back": "/kits/processed/standardized-source/source-50-back.webp"
+  },
+  {
+    "product": 29,
+    "sourceIndex": 51,
+    "source": "ChatGPT Image May 30, 2026, 01_20_58 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-51-front.webp",
+    "back": "/kits/processed/standardized-source/source-51-back.webp"
+  },
+  {
+    "product": 30,
+    "sourceIndex": 52,
+    "source": "ChatGPT Image May 30, 2026, 01_22_03 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-52-front.webp",
+    "back": "/kits/processed/standardized-source/source-52-back.webp"
+  },
+  {
+    "product": 31,
+    "sourceIndex": 53,
+    "source": "ChatGPT Image May 30, 2026, 01_22_50 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-53-front.webp",
+    "back": "/kits/processed/standardized-source/source-53-back.webp"
+  },
+  {
+    "product": 32,
+    "sourceIndex": 54,
+    "source": "ChatGPT Image May 30, 2026, 01_23_50 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-54-front.webp",
+    "back": "/kits/processed/standardized-source/source-54-back.webp"
+  },
+  {
+    "product": 33,
+    "sourceIndex": 55,
+    "source": "ChatGPT Image May 30, 2026, 01_24_41 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-55-front.webp",
+    "back": "/kits/processed/standardized-source/source-55-back.webp"
+  },
+  {
+    "product": 34,
+    "sourceIndex": 56,
+    "source": "ChatGPT Image May 30, 2026, 01_25_32 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-56-front.webp",
+    "back": "/kits/processed/standardized-source/source-56-back.webp"
+  },
+  {
+    "product": 35,
+    "sourceIndex": 57,
+    "source": "ChatGPT Image May 30, 2026, 01_26_21 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-57-front.webp",
+    "back": "/kits/processed/standardized-source/source-57-back.webp"
+  },
+  {
+    "product": 36,
+    "sourceIndex": 58,
+    "source": "ChatGPT Image May 30, 2026, 01_27_13 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-58-front.webp",
+    "back": "/kits/processed/standardized-source/source-58-back.webp"
+  },
+  {
+    "product": 37,
+    "sourceIndex": 59,
+    "source": "ChatGPT Image May 30, 2026, 01_28_02 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-59-front.webp",
+    "back": "/kits/processed/standardized-source/source-59-back.webp"
+  },
+  {
+    "product": 38,
+    "sourceIndex": 60,
+    "source": "ChatGPT Image May 30, 2026, 01_29_17 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-60-front.webp",
+    "back": "/kits/processed/standardized-source/source-60-back.webp"
+  },
+  {
+    "product": 39,
+    "sourceIndex": 61,
+    "source": "ChatGPT Image May 30, 2026, 01_30_56 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-61-front.webp",
+    "back": "/kits/processed/standardized-source/source-61-back.webp"
+  },
+  {
+    "product": 40,
+    "sourceIndex": 62,
+    "source": "ChatGPT Image May 30, 2026, 01_31_56 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-62-front.webp",
+    "back": "/kits/processed/standardized-source/source-62-back.webp"
+  },
+  {
+    "sourceIndex": 63,
+    "source": "ChatGPT Image May 30, 2026, 01_42_48 PM.png",
+    "type": "single-view",
+    "output": "/kits/processed/standardized-source/source-63-single.webp"
+  },
+  {
+    "product": 41,
+    "sourceIndex": 64,
+    "source": "ChatGPT Image May 30, 2026, 01_46_10 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-64-front.webp",
+    "back": "/kits/processed/standardized-source/source-64-back.webp"
+  },
+  {
+    "product": 42,
+    "sourceIndex": 65,
+    "source": "ChatGPT Image May 30, 2026, 01_47_37 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-65-front.webp",
+    "back": "/kits/processed/standardized-source/source-65-back.webp"
+  },
+  {
+    "product": 43,
+    "sourceIndex": 66,
+    "source": "ChatGPT Image May 30, 2026, 01_51_58 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-66-front.webp",
+    "back": "/kits/processed/standardized-source/source-66-back.webp"
+  },
+  {
+    "product": 44,
+    "sourceIndex": 67,
+    "source": "ChatGPT Image May 30, 2026, 01_56_11 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-67-front.webp",
+    "back": "/kits/processed/standardized-source/source-67-back.webp"
+  },
+  {
+    "product": 45,
+    "sourceIndex": 68,
+    "source": "ChatGPT Image May 30, 2026, 02_00_16 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-68-front.webp",
+    "back": "/kits/processed/standardized-source/source-68-back.webp"
+  },
+  {
+    "product": 46,
+    "sourceIndex": 69,
+    "source": "ChatGPT Image May 30, 2026, 02_01_41 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-69-front.webp",
+    "back": "/kits/processed/standardized-source/source-69-back.webp"
+  },
+  {
+    "product": 47,
+    "sourceIndex": 70,
+    "source": "ChatGPT Image May 30, 2026, 02_02_46 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-70-front.webp",
+    "back": "/kits/processed/standardized-source/source-70-back.webp"
+  },
+  {
+    "product": 48,
+    "sourceIndex": 71,
+    "source": "ChatGPT Image May 30, 2026, 02_20_46 PM.png",
+    "type": "front-back-pair",
+    "front": "/kits/processed/standardized-source/source-71-front.webp",
+    "back": "/kits/processed/standardized-source/source-71-back.webp"
+  }
+]
