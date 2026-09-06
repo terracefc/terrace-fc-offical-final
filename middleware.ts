@@ -45,13 +45,11 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl)
   }
 
-  // Keep the storefront available to the configured review device while the
-  // admin-controlled maintenance switch is enabled for everyone else.
+  // Maintenance mode applies to every storefront visitor, including admins
+  // viewing the public site. Admin routes stay available so it can be disabled.
   if (!pathname.startsWith("/maintenance") && !pathname.startsWith("/_next")) {
     const settings = await getSiteSettings()
-    const allowedIp = settings.allowedIp || process.env.SITE_LOCKDOWN_ALLOWED_IP || DEFAULT_ALLOWED_IP
-    const isReviewDevice = getClientIp(request) === allowedIp || cookie === token
-    if (settings.lockdownEnabled && !isReviewDevice) {
+    if (settings.lockdownEnabled) {
       return NextResponse.redirect(new URL("/maintenance", request.url))
     }
   }
@@ -70,8 +68,13 @@ function getClientIp(request: NextRequest) {
 }
 
 async function getSiteSettings(): Promise<SiteSettings> {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const serviceKey = process.env.SUPABASE_SECRET_KEY
+  const supabaseUrl = process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_URL
+    || process.env.NEXT_PUBLIC_sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_URL
+    || process.env.NEXT_PUBLIC_SUPABASE_URL
+  const serviceKey = process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_SERVICE_ROLE_KEY
+    || process.env.sba_08338b7e2d29635e8743b3938fd5333778e65742_SUPABASE_SECRET_KEY
+    || process.env.SUPABASE_SERVICE_ROLE_KEY
+    || process.env.SUPABASE_SECRET_KEY
   if (!supabaseUrl || !serviceKey) return { allowedIp: DEFAULT_ALLOWED_IP, lockdownEnabled: false }
 
   try {

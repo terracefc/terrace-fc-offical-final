@@ -22,7 +22,7 @@ export default function MaintenancePage() {
               className="group inline-flex flex-col items-center gap-5 text-base text-white/70 transition hover:text-white sm:text-lg"
             >
               <span>Click here to DM me</span>
-              <span className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-3 font-black text-black shadow-lg transition group-hover:scale-105">
+              <span className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-3 font-black text-black shadow-lg transition duration-200 group-hover:scale-105 group-hover:bg-[#ff454b] group-hover:text-white">
                 <Instagram className="h-6 w-6" strokeWidth={2.5} /> Instagram
               </span>
             </a>

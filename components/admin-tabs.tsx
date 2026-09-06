@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import type { ReactNode } from "react"
-import { ClipboardList, IndianRupee, MessageCircle, Settings, ShieldAlert, Shirt, Ticket, TrendingUp, UsersRound } from "lucide-react"
+import { ClipboardList, IndianRupee, Loader2, MessageCircle, Settings, ShieldAlert, Shirt, Ticket, TrendingUp, UsersRound } from "lucide-react"
 import { AdminAccounts } from "@/components/admin-accounts"
 import { AdminOrders } from "@/components/admin-orders"
 import { AdminCoupons } from "@/components/admin-coupons"
@@ -12,6 +12,7 @@ import { AdminSupport } from "@/components/admin-support"
 import { AdminJerseyRequests } from "@/components/admin-jersey-requests"
 import type { Kit } from "@/lib/data"
 import { fetchOrders, isCancelledOrderExpired, type StoreOrder } from "@/lib/orders"
+import { defaultSiteSettings, type SiteSettings } from "@/lib/site-settings"
 
 export type AdminTab = "orders" | "support" | "requests" | "accounts" | "coupons" | "lockdown" | "settings"
 
@@ -86,6 +87,8 @@ export function AdminTabs({ kits, initialTab = "orders" }: { kits: Kit[]; initia
 
   return (
     <section className="flex flex-col gap-6">
+      {activeTab === "orders" && <MaintenanceModeSwitch />}
+
       <div className="grid gap-3 sm:grid-cols-4">
         <DashboardStat icon={<ClipboardList className="h-4 w-4" />} label="Total Orders" value={visibleOrders.length.toString()} />
         <DashboardStat icon={<IndianRupee className="h-4 w-4" />} label="Paid/COD Orders" value={visibleOrders.filter((order) => order.status === "paid" || order.status === "cod").length.toString()} />
@@ -229,6 +232,85 @@ export function AdminTabs({ kits, initialTab = "orders" }: { kits: Kit[]; initia
         </div>
       )}
     </section>
+  )
+}
+
+function MaintenanceModeSwitch() {
+  const [settings, setSettings] = useState<SiteSettings | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [isSaving, setIsSaving] = useState(false)
+  const [message, setMessage] = useState("")
+
+  useEffect(() => {
+    fetch("/api/admin/settings", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("Could not load maintenance mode.")))
+      .then((data) => setSettings(data.settings))
+      .catch((error) => setMessage(error instanceof Error ? error.message : "Could not load maintenance mode."))
+      .finally(() => setIsLoading(false))
+  }, [])
+
+  const toggleMaintenance = async (enabled: boolean) => {
+    if (!settings) return
+    const previous = settings
+    const next = { ...settings, lockdownEnabled: enabled }
+    setSettings(next)
+    setIsSaving(true)
+    setMessage("")
+
+    try {
+      const response = await fetch("/api/admin/settings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ settings: next }),
+      })
+      const data = await response.json().catch(() => null)
+      if (!response.ok) throw new Error(data?.error || "Could not update maintenance mode.")
+      setSettings(data.settings)
+      setMessage(enabled ? "Maintenance mode is on for every visitor." : "The store is live for everyone.")
+    } catch (error) {
+      setSettings(previous)
+      setMessage(error instanceof Error ? error.message : "Could not update maintenance mode.")
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
+  return (
+    <div className="rounded-2xl border border-border bg-background/85 p-4 shadow-sm">
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <div className="flex items-center gap-2">
+            <p className="text-sm font-black">Maintenance Mode</p>
+            {!isLoading && settings && (
+              <span className={`rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-widest ${settings.lockdownEnabled ? "bg-accent/15 text-accent" : "bg-secondary text-muted-foreground"}`}>
+                {settings.lockdownEnabled ? "On" : "Off"}
+              </span>
+            )}
+          </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {isLoading ? "Checking the saved setting..." : settings?.lockdownEnabled ? "Every storefront page is showing the maintenance screen." : "The storefront is open normally."}
+          </p>
+        </div>
+        {isLoading || !settings ? (
+          <Loader2 className="h-5 w-5 shrink-0 animate-spin text-muted-foreground" />
+        ) : (
+          <label className="relative inline-flex shrink-0 cursor-pointer items-center">
+            <input
+              type="checkbox"
+              checked={settings.lockdownEnabled}
+              disabled={isSaving}
+              onChange={(event) => toggleMaintenance(event.target.checked)}
+              className="peer sr-only"
+              aria-label="Maintenance Mode"
+            />
+            <span className="h-7 w-12 rounded-full bg-muted transition-colors peer-checked:bg-accent peer-disabled:opacity-50" />
+            <span className="absolute left-1 h-5 w-5 rounded-full bg-white shadow transition-transform peer-checked:translate-x-5" />
+            {isSaving && <Loader2 className="absolute -left-7 h-4 w-4 animate-spin text-muted-foreground" />}
+          </label>
+        )}
+      </div>
+      {message && <p className="mt-3 text-xs font-bold text-accent">{message}</p>}
+    </div>
   )
 }
 
