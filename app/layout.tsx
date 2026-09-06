@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/sonner"
 import { StoreProvider } from "@/lib/store-context"
 import { ConfirmDialogHost } from "@/components/confirm-dialog-host"
 import { NotificationSoundEffects } from "@/components/notification-sound-effects"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://terracefc.com"),
@@ -63,6 +64,7 @@ export default function RootLayout({
           <NotificationSoundEffects />
           <ConfirmDialogHost />
         </StoreProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
