@@ -5,7 +5,7 @@ const ADMIN_COOKIE = "terrace_admin"
 const DEFAULT_ALLOWED_IP = "122.171.19.152"
 const ADMIN_SESSION_MAX_AGE = 60 * 60 * 24 * 365
 
-type SiteSettings = { allowedIp: string }
+type SiteSettings = { allowedIp: string; lockdownEnabled: boolean }
 
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -45,6 +45,17 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl)
   }
 
+  // Keep the storefront available to the configured review device while the
+  // admin-controlled maintenance switch is enabled for everyone else.
+  if (!pathname.startsWith("/maintenance") && !pathname.startsWith("/_next")) {
+    const settings = await getSiteSettings()
+    const allowedIp = settings.allowedIp || process.env.SITE_LOCKDOWN_ALLOWED_IP || DEFAULT_ALLOWED_IP
+    const isReviewDevice = getClientIp(request) === allowedIp || cookie === token
+    if (settings.lockdownEnabled && !isReviewDevice) {
+      return NextResponse.redirect(new URL("/maintenance", request.url))
+    }
+  }
+
   const response = NextResponse.next()
   if (cookie === token) setAdminCookie(response, token, ADMIN_SESSION_MAX_AGE)
   return response
@@ -61,16 +72,19 @@ function getClientIp(request: NextRequest) {
 async function getSiteSettings(): Promise<SiteSettings> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const serviceKey = process.env.SUPABASE_SECRET_KEY
-  if (!supabaseUrl || !serviceKey) return { allowedIp: DEFAULT_ALLOWED_IP }
+  if (!supabaseUrl || !serviceKey) return { allowedIp: DEFAULT_ALLOWED_IP, lockdownEnabled: false }
 
   try {
     const response = await fetch(`${supabaseUrl}/auth/v1/admin/users`, { headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` }, cache: "no-store" })
-    if (!response.ok) return { allowedIp: DEFAULT_ALLOWED_IP }
+    if (!response.ok) return { allowedIp: DEFAULT_ALLOWED_IP, lockdownEnabled: false }
     const data = await response.json()
     const settings = data.users?.find((user: any) => user.email === "site-settings@terracefc.local")?.user_metadata?.site_settings
-    return { allowedIp: typeof settings?.allowedIp === "string" && settings.allowedIp ? settings.allowedIp : DEFAULT_ALLOWED_IP }
+    return {
+      allowedIp: typeof settings?.allowedIp === "string" && settings.allowedIp ? settings.allowedIp : DEFAULT_ALLOWED_IP,
+      lockdownEnabled: settings?.lockdownEnabled === true,
+    }
   } catch {
-    return { allowedIp: DEFAULT_ALLOWED_IP }
+    return { allowedIp: DEFAULT_ALLOWED_IP, lockdownEnabled: false }
   }
 }
 
