@@ -9,6 +9,7 @@ import { StoreProvider } from "@/lib/store-context"
 import { ConfirmDialogHost } from "@/components/confirm-dialog-host"
 import { NotificationSoundEffects } from "@/components/notification-sound-effects"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SupportFloatingButton } from "@/components/support-floating-button"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://terracefc.com"),
@@ -64,6 +65,7 @@ export default function RootLayout({
           <NotificationSoundEffects />
           <ConfirmDialogHost />
         </StoreProvider>
+        <SupportFloatingButton />
         <SpeedInsights />
       </body>
     </html>

@@ -47,7 +47,7 @@ export default async function middleware(request: NextRequest) {
 
   // Maintenance mode applies to every storefront visitor, including admins
   // viewing the public site. Admin routes stay available so it can be disabled.
-  if (!pathname.startsWith("/maintenance") && !pathname.startsWith("/_next")) {
+  if (!pathname.startsWith("/maintenance") && !pathname.startsWith("/_next") && !pathname.startsWith("/api/")) {
     const settings = await getSiteSettings()
     if (settings.lockdownEnabled) {
       return NextResponse.redirect(new URL("/maintenance", request.url))
