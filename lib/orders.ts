@@ -104,7 +104,7 @@ export function getOrderDisplayId(order: Pick<StoreOrder, "id">) {
 }
 
 export function createOrderId() {
-  return `TFC-${new Date().toISOString().slice(2, 10).replaceAll("-", "")}-${Math.floor(1000 + Math.random() * 9000)}`
+  return `TFC-${Math.floor(100000 + Math.random() * 900000)}`
 }
 
 export function cartToOrderItems(cart: CartItem[]): OrderItem[] {

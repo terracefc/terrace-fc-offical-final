@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       const orderId = order.id.toUpperCase().replace(/\s+/g, "")
       const orderSuffix = orderId.replace(/^TFC-?/, "").replace(/[^A-Z0-9]/g, "")
       if (orderId === normalizedOrderId || orderSuffix === normalizedOrderSuffix) return true
-      if (normalizedOrderSuffix.length >= 4 && orderSuffix.endsWith(normalizedOrderSuffix)) return true
+      if (normalizedOrderSuffix.length >= 6 && orderSuffix.endsWith(normalizedOrderSuffix)) return true
       if (!isPhoneLookup) return false
       const orderPhone = String(order.address?.phone || "").replace(/\D/g, "")
       return orderPhone === normalizedPhone || orderPhone.slice(-10) === normalizedPhone.slice(-10)

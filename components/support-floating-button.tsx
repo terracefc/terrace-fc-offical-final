@@ -23,6 +23,7 @@ export function SupportFloatingButton() {
   const [view, setView] = useState<PanelView>("home")
   const [customer, setCustomer] = useState<CustomerAccount | null>(null)
   const [orders, setOrders] = useState<StoreOrder[]>([])
+  const [trackingMode, setTrackingMode] = useState<"phone" | "order">("phone")
   const [trackingQuery, setTrackingQuery] = useState("")
   const [trackingError, setTrackingError] = useState("")
   const [isTracking, setIsTracking] = useState(false)
@@ -46,7 +47,8 @@ export function SupportFloatingButton() {
   }, [customer, orders])
 
   const findOrder = async () => {
-    if (!trackingQuery.trim() || isTracking) return
+    const requiredDigits = trackingMode === "phone" ? 10 : 6
+    if (trackingQuery.length !== requiredDigits || isTracking) return
     setIsTracking(true)
     setTrackingError("")
 
@@ -54,7 +56,7 @@ export function SupportFloatingButton() {
       const response = await fetch("/api/orders/lookup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: trackingQuery }),
+        body: JSON.stringify({ query: trackingMode === "order" ? `TFC-${trackingQuery}` : trackingQuery }),
       })
       const data = await response.json().catch(() => null)
       if (!response.ok || !data?.orderId) throw new Error(data?.error || "Order not found.")
@@ -136,18 +138,35 @@ export function SupportFloatingButton() {
 
               {view === "orders" && (
                 <div className="space-y-3">
-                  <AssistantBubble>Enter your phone number or just the number shown after TFC- to open your tracking page.</AssistantBubble>
+                  <AssistantBubble>Choose one option below. We will take you straight to your protected tracking page.</AssistantBubble>
                   <form className="rounded-xl border border-white/10 bg-white/[0.06] p-3" onSubmit={(event) => { event.preventDefault(); void findOrder() }}>
-                    <label className="text-[10px] font-black uppercase tracking-widest text-white/55">Phone or number after TFC-</label>
-                    <input
-                      value={trackingQuery}
-                      onChange={(event) => { setTrackingQuery(event.target.value); setTrackingError("") }}
-                      placeholder="9876543210 or 1234"
-                      autoComplete="tel"
-                      className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-black/35 px-3 text-sm font-bold text-white outline-none placeholder:text-white/35 focus:border-red-500"
-                    />
+                    <div className="grid grid-cols-2 gap-2">
+                      {(["phone", "order"] as const).map((mode) => (
+                        <button key={mode} type="button" onClick={() => { setTrackingMode(mode); setTrackingQuery(""); setTrackingError("") }} className={`h-9 rounded-lg text-[10px] font-black uppercase tracking-widest ${trackingMode === mode ? "bg-red-600 text-white" : "border border-white/15 text-white/60"}`}>
+                          {mode === "phone" ? "Phone Number" : "Order Number"}
+                        </button>
+                      ))}
+                    </div>
+                    <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-white/55">
+                      {trackingMode === "phone" ? "10-digit phone number" : "6-digit order number"}
+                    </label>
+                    <div className="relative mt-2 flex h-11 overflow-hidden rounded-xl border border-white/15 bg-black/35 focus-within:border-red-500">
+                      {trackingMode === "order" && <span className="flex items-center border-r border-white/15 bg-white/10 px-3 text-sm font-black text-red-300">TFC-</span>}
+                      <input
+                        value={trackingQuery}
+                        onChange={(event) => { setTrackingQuery(event.target.value.replace(/\D/g, "").slice(0, trackingMode === "phone" ? 10 : 6)); setTrackingError("") }}
+                        placeholder={trackingMode === "phone" ? "9876543210" : "123456"}
+                        inputMode="numeric"
+                        autoComplete={trackingMode === "phone" ? "tel" : "off"}
+                        className="min-w-0 flex-1 bg-transparent px-3 text-sm font-bold text-white outline-none placeholder:text-white/35"
+                      />
+                      <span className="flex items-center pr-3 text-[10px] font-bold text-white/35">{trackingQuery.length}/{trackingMode === "phone" ? 10 : 6}</span>
+                    </div>
+                    <p className="mt-2 text-[11px] leading-relaxed text-white/45">
+                      {trackingMode === "phone" ? "Use the same phone number entered at checkout." : "Only type the six digits—TFC- is added automatically."}
+                    </p>
                     {trackingError && <p className="mt-2 text-xs font-bold text-red-300">{trackingError}</p>}
-                    <button type="submit" disabled={!trackingQuery.trim() || isTracking} className="mt-3 h-10 w-full rounded-xl bg-red-600 text-xs font-black uppercase tracking-widest text-white disabled:opacity-50">
+                    <button type="submit" disabled={trackingQuery.length !== (trackingMode === "phone" ? 10 : 6) || isTracking} className="mt-3 h-10 w-full rounded-xl bg-red-600 text-xs font-black uppercase tracking-widest text-white disabled:opacity-50">
                       {isTracking ? "Finding order..." : "Track order"}
                     </button>
                   </form>
