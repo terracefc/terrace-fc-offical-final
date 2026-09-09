@@ -24,10 +24,10 @@ export type JerseyCustomization = {
 }
 
 export const JERSEY_VERSION_PRICES: Record<JerseyVersion, number> = {
-  plain: 1199,
-  fan: 999,
-  player: 1199,
-  master: 1099,
+  plain: 1799,
+  fan: 1799,
+  player: 1999,
+  master: 1899,
   embroidery: EMBROIDERY_ONLY_PRICE,
 }
 

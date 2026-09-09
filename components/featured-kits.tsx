@@ -98,7 +98,7 @@ export function FeaturedKits({ mode = "collection" }: { mode?: "home" | "collect
   }, [browseableKits, collectionFilter, homepageContent.featuredKitIds, mode])
 
   const displayKits = visibleKits.slice(0, mode === "home" ? 8 : visibleKits.length)
-  const priceRangeLabel = "₹999 - ₹1,499"
+  const priceRangeLabel = "₹1,799 - ₹1,999"
   const collectionHeading = getCollectionHeading(collectionFilter)
   const isF1Collection = collectionFilter.category.toLowerCase() === "f1"
   return (
@@ -324,8 +324,8 @@ export function FeaturedKits({ mode = "collection" }: { mode?: "home" | "collect
               <p className="mt-1 text-sm font-bold text-background/80">Highest quality finish premium quality</p>
             </div>
             <div className="flex gap-3 flex-wrap justify-center">
-              <span className="px-3 py-1.5 bg-white/10 rounded-full text-xs font-medium">Fan jerseys from ₹999</span>
-              <span className="px-3 py-1.5 bg-white/10 rounded-full text-xs font-medium">Premium jersey up to ₹1,499</span>
+              <span className="px-3 py-1.5 bg-white/10 rounded-full text-xs font-medium">Fan jerseys from ₹1,799</span>
+              <span className="px-3 py-1.5 bg-white/10 rounded-full text-xs font-medium">Player jerseys up to ₹1,999</span>
             </div>
           </div>
         </div>

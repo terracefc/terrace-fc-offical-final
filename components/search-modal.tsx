@@ -327,7 +327,7 @@ export function SearchModal() {
                       <div className="min-w-0 flex-1">
                         <h4 className="!text-black text-sm font-black leading-snug transition-colors group-hover/item:text-accent sm:text-base">{getSearchResultTitle(kit)}</h4>
                         <p className="mt-1 !text-black text-xs font-bold leading-relaxed sm:text-sm">
-                          From ₹999
+                          From ₹1,799
                         </p>
                       </div>
                     </Link>
