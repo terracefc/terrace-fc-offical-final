@@ -15,12 +15,16 @@ export async function POST(request: Request) {
 
   const orders = await readLookupOrders()
   const normalizedOrderId = query.toUpperCase().replace(/\s+/g, "")
+  const normalizedOrderSuffix = normalizedOrderId.replace(/^TFC-?/, "").replace(/[^A-Z0-9]/g, "")
   const normalizedPhone = query.replace(/\D/g, "")
   const isPhoneLookup = normalizedPhone.length >= 10
 
   const matches = orders
     .filter((order) => {
-      if (order.id.toUpperCase().replace(/\s+/g, "") === normalizedOrderId) return true
+      const orderId = order.id.toUpperCase().replace(/\s+/g, "")
+      const orderSuffix = orderId.replace(/^TFC-?/, "").replace(/[^A-Z0-9]/g, "")
+      if (orderId === normalizedOrderId || orderSuffix === normalizedOrderSuffix) return true
+      if (normalizedOrderSuffix.length >= 4 && orderSuffix.endsWith(normalizedOrderSuffix)) return true
       if (!isPhoneLookup) return false
       const orderPhone = String(order.address?.phone || "").replace(/\D/g, "")
       return orderPhone === normalizedPhone || orderPhone.slice(-10) === normalizedPhone.slice(-10)

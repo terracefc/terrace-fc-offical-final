@@ -136,13 +136,13 @@ export function SupportFloatingButton() {
 
               {view === "orders" && (
                 <div className="space-y-3">
-                  <AssistantBubble>Enter your phone number or order number to open your tracking page.</AssistantBubble>
+                  <AssistantBubble>Enter your phone number or just the number shown after TFC- to open your tracking page.</AssistantBubble>
                   <form className="rounded-xl border border-white/10 bg-white/[0.06] p-3" onSubmit={(event) => { event.preventDefault(); void findOrder() }}>
-                    <label className="text-[10px] font-black uppercase tracking-widest text-white/55">Phone or order number</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-white/55">Phone or number after TFC-</label>
                     <input
                       value={trackingQuery}
                       onChange={(event) => { setTrackingQuery(event.target.value); setTrackingError("") }}
-                      placeholder="9876543210 or TFC-..."
+                      placeholder="9876543210 or 1234"
                       autoComplete="tel"
                       className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-black/35 px-3 text-sm font-bold text-white outline-none placeholder:text-white/35 focus:border-red-500"
                     />
