@@ -3,7 +3,7 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react"
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { Check, ClipboardList, ImagePlus, Mail, MessageCircle, PackageCheck, Send, Shirt, Star, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { readCustomer, type CustomerAccount } from "@/lib/customer-auth"
@@ -18,10 +18,14 @@ const MAX_REQUEST_PHOTO_BYTES = 2 * 1024 * 1024
 
 export function SupportFloatingButton() {
   const pathname = usePathname()
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [view, setView] = useState<PanelView>("home")
   const [customer, setCustomer] = useState<CustomerAccount | null>(null)
   const [orders, setOrders] = useState<StoreOrder[]>([])
+  const [trackingQuery, setTrackingQuery] = useState("")
+  const [trackingError, setTrackingError] = useState("")
+  const [isTracking, setIsTracking] = useState(false)
   const chatEndRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -40,6 +44,28 @@ export function SupportFloatingButton() {
       .filter((order) => order.customerId === customer.id || order.customerEmail?.toLowerCase() === email || order.address?.email?.toLowerCase() === email)
       .slice(0, 4)
   }, [customer, orders])
+
+  const findOrder = async () => {
+    if (!trackingQuery.trim() || isTracking) return
+    setIsTracking(true)
+    setTrackingError("")
+
+    try {
+      const response = await fetch("/api/orders/lookup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: trackingQuery }),
+      })
+      const data = await response.json().catch(() => null)
+      if (!response.ok || !data?.orderId) throw new Error(data?.error || "Order not found.")
+      setIsOpen(false)
+      router.push(`/orders/${encodeURIComponent(data.orderId)}`)
+    } catch (error) {
+      setTrackingError(error instanceof Error ? error.message : "Order not found.")
+    } finally {
+      setIsTracking(false)
+    }
+  }
 
   useEffect(() => {
     if (!isOpen) return
@@ -110,9 +136,24 @@ export function SupportFloatingButton() {
 
               {view === "orders" && (
                 <div className="space-y-3">
-                  <AssistantBubble>Choose an order below to check the current progress.</AssistantBubble>
+                  <AssistantBubble>Enter your phone number or order number to open your tracking page.</AssistantBubble>
+                  <form className="rounded-xl border border-white/10 bg-white/[0.06] p-3" onSubmit={(event) => { event.preventDefault(); void findOrder() }}>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-white/55">Phone or order number</label>
+                    <input
+                      value={trackingQuery}
+                      onChange={(event) => { setTrackingQuery(event.target.value); setTrackingError("") }}
+                      placeholder="9876543210 or TFC-..."
+                      autoComplete="tel"
+                      className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-black/35 px-3 text-sm font-bold text-white outline-none placeholder:text-white/35 focus:border-red-500"
+                    />
+                    {trackingError && <p className="mt-2 text-xs font-bold text-red-300">{trackingError}</p>}
+                    <button type="submit" disabled={!trackingQuery.trim() || isTracking} className="mt-3 h-10 w-full rounded-xl bg-red-600 text-xs font-black uppercase tracking-widest text-white disabled:opacity-50">
+                      {isTracking ? "Finding order..." : "Track order"}
+                    </button>
+                  </form>
+                  {customer && customerOrders.length > 0 && <p className="text-[10px] font-black uppercase tracking-widest text-white/45">Your recent orders</p>}
                   {!customer ? (
-                    <LoginBox />
+                    <p className="text-center text-xs text-white/45">Or log in to see your recent orders automatically.</p>
                   ) : customerOrders.length === 0 ? (
                     <div className="rounded-xl border border-dashed border-white/15 p-4 text-sm text-white/60">
                       No orders found for this login.
