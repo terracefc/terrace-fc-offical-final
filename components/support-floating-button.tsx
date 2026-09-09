@@ -46,7 +46,7 @@ export function SupportFloatingButton() {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" })
   }, [isOpen, view, customerOrders.length])
 
-  if (pathname.startsWith("/admin")) return null
+  if (pathname.startsWith("/admin") || pathname.startsWith("/maintenance")) return null
 
   return (
     <>
